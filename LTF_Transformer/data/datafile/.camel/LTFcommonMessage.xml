@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LtfCommonStructure infotype="LTFCommonXML">
+  <MessageID>A234567</MessageID>
+  <CorrelationID>correl123</CorrelationID>
+  <MessageType>TrainEvent</MessageType>
+  <TimeStamp>10:00pm</TimeStamp>
+  <FromApplication>MainFrame</FromApplication>
+  <Operation>Put</Operation>
+  <Payload>testpayload</Payload>
+</LtfCommonStructure>

@@ -1,0 +1,82 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="LTFCommonStructure">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Header"/>
+				<xs:element ref="Payload"/>
+				<xs:element ref="Transformation"/>
+				<xs:element ref="DataConversion"/>
+				<xs:element ref="Delay"/>
+				<xs:element ref="Destination"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Header">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="MessageID"/>
+				<xs:element ref="MessageType"/>
+				<xs:element ref="SourceApplication"/>
+				<xs:element ref="CorrelationID"/>
+				<xs:element ref="TimeStamp"/>
+				<xs:element ref="Operation"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Payload" type="xs:string"/>
+	<xs:element name="Transformation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="TransformationServiceName"/>
+				<xs:element ref="TransformationStyleSheet"/>
+				<xs:element ref="TransformationSourceFormatName"/>
+				<xs:element ref="TransformationTargetFormatName"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DataConversion">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="DataConversionInput" maxOccurs="unbounded"/>
+				<xs:element ref="DataConversionOutput"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Delay" type="xs:string"/>
+	<xs:element name="Destination" type="xs:string"/>
+	<xs:element name="MessageID" type="xs:string"/>
+	<xs:element name="MessageType" type="xs:string"/>
+	<xs:element name="SourceApplication" type="xs:string"/>
+	<xs:element name="CorrelationID" type="xs:string"/>
+	<xs:element name="TimeStamp" type="xs:string"/>
+	<xs:element name="Operation" type="xs:string"/>
+	<xs:element name="TransformationServiceName" type="xs:string"/>
+	<xs:element name="TransformationStyleSheet" type="xs:string"/>
+	<xs:element name="TransformationSourceFormatName" type="xs:string"/>
+	<xs:element name="TransformationTargetFormatName" type="xs:string"/>
+	<xs:element name="DataConversionInput">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="DataToConvert"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DataConversionOutput">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="DataToConvert"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DataToConvert">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ConversionKey"/>
+				<xs:element ref="SourceValue"/>
+			</xs:sequence>
+			<xs:attribute name="FieldType" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConversionKey" type="xs:string"/>
+	<xs:element name="SourceValue" type="xs:string"/>
+</xs:schema>

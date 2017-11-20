@@ -1,0 +1,69 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="MessageHeaderEnrichRules">
+		<xs:complexType>
+			<xs:sequence>
+			    <xs:element ref="MessageHeaderEnrichRule" maxOccurs="unbounded"/> 
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	 <xs:element name="MessageHeaderEnrichRule">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="MessageHeaderEnrichRuleIdentifier"/>
+				<xs:element ref="MessageHeaderEnrichValues"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MessageHeaderEnrichRuleIdentifier">
+	<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="MessageHeaderEnrichRuleIdentifierKeyValue" maxOccurs="unbounded"/>
+				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	
+	
+	
+	
+	
+	
+	<xs:element name="MessageHeaderEnrichRuleIdentifierKeyValue" >
+	
+	<xs:complexType>
+			<xs:sequence>
+			    <xs:element ref="MessageHeaderEnrichRuleIdentifierKey"/>
+			     <xs:element ref="MessageHeaderEnrichRuleIdentifierValue"/> 
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MessageHeaderEnrichRuleIdentifierKey" type="xs:string"/>
+	<xs:element name="MessageHeaderEnrichRuleIdentifierValue" type="xs:string"/>
+	<xs:element name="MessageHeaderEnrichValues">
+	<xs:complexType>
+			<xs:sequence>
+			    <xs:element ref="MessageHeaderEnrichValueKeyValue" maxOccurs="unbounded"/>
+			  
+			</xs:sequence>
+		</xs:complexType>
+	
+	</xs:element>
+	
+	
+	
+	<xs:element name="MessageHeaderEnrichValueKeyValue" >
+	<xs:complexType>
+			<xs:sequence>
+			    <xs:element ref="MessageHeaderEnrichValueKey"/>
+			     <xs:element ref="MessageHeaderEnrichValue"/> 
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MessageHeaderEnrichValueKey" type="xs:string"/>
+	<xs:element name="MessageHeaderEnrichValue" type="xs:string"/>
+	
+	
+	
+
+</xs:schema>
